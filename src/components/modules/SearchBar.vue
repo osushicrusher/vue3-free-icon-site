@@ -4,7 +4,7 @@
         type="text"
         @input="setPokeName"
         class="bg-white rounded-3xl p-3 text-black shadow-md border divide-solid border-black w-10/12 md:w-8/12 lg:w-6/12" 
-        placeholder="ポケモンの名前を入力する"
+        placeholder="名前で検索する"
         />
         <!-- <fa icon="search" class="search"/> -->
     </div>

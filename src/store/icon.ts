@@ -8,7 +8,7 @@ type IconName = {
 type Icon = {
   id: number
   name: IconName
-  category: number
+  category_id: number
   tags: string[]
   path: string
   settingCount: number
@@ -17,18 +17,30 @@ type Icon = {
 export const useIconStore = defineStore("icon", {
   state: () => {
     return {
+      id: 1,
       selectedIcon: {} as Icon,
-      icons: [] as Icon[]
+      icons: [] as Icon[],
+      searchText: ''
     }
   },
   getters: {
-    // filteredPokemonsByName(state) :Pokemon[] {
-    //   const txt = state.searchText
-    //   const katakanaTxt = txt.replace(/[\u3042-\u3093]/g, m=>String.fromCharCode(m.charCodeAt(0) + 96))
-    //   return state.pokemons.filter(p => txt === p.name.japanese.substr(0, txt.length) || katakanaTxt === p.name.japanese.substr(0, txt.length))
-    // }
+    findSelectedIcon(state) :Icon {
+      return state.selectedIcon
+    },
+    filteredIcons(state) :Icon[] {
+      return state.icons.filter(i => i.category_id === state.id)
+    }
   },
   actions: {
+    addCategoryId(id :number) :void {
+      this.id = id
+    },
+    addIconData(data :Icon[]) {
+      this.icons = data
+    },
+    addSelectedIcon(icon :Icon) {
+      this.selectedIcon = icon
+    }
     // addPokemon(pokemon: Pokemon) :void {
     //   this.pokemon = pokemon
     // },

@@ -18,29 +18,6 @@ import { storeToRefs } from "pinia";
 import { ref } from "vue";
 import { useIconStore } from "../../store/icon";
 
-type Names = {
-    english: string
-    japanese: string
-    chinese: string
-    french: string
-}
-
-type Base = {
-    HP: number
-    Attack: number
-    Defense: number
-    SpAttack: number
-    SpDefense: number
-    Speed: number
-}
-
-type Pokemon = {
-    id: number
-    name: Names
-    type: string[]
-    base: Base
-}
-
 const store = useIconStore()
 const { filteredPokemonsByName } = storeToRefs(store)
 

@@ -14,6 +14,7 @@ library.add(faPlay, faSearch, faTimesCircle, faMusic, faChevronDown)
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeComponent from "./components/pages/Home.vue"
 import CategoriesComponent from "./components/pages/Categories.vue"
+import CategoryDetailComponent from "./components/pages/CategoryDetail.vue"
 import NotFoundComponent from "./components/pages/NotFound.vue"
 
 const routes = [
@@ -22,8 +23,12 @@ const routes = [
         component: HomeComponent
     },
     {
-        path: '/category/:id',
+        path: '/category/:category_id',
         component: CategoriesComponent
+    },
+    {
+        path: '/category/:category_id/:id',
+        component: CategoryDetailComponent
     }
 ]
 
