@@ -29,6 +29,10 @@ const routes = [
     {
         path: '/category/:category_id/:id',
         component: CategoryDetailComponent
+    },
+    {
+        path: '/*',
+        component: NotFoundComponent
     }
 ]
 

@@ -9,7 +9,8 @@ type Icon = {
   id: number
   name: IconName
   category_id: number
-  tags: string[]
+  tags: string[],
+  description: string,
   path: string
   settingCount: number
 }
@@ -17,35 +18,68 @@ type Icon = {
 export const useIconStore = defineStore("icon", {
   state: () => {
     return {
-      id: 1,
+      category_id: 1,
       selectedIcon: {} as Icon,
       icons: [] as Icon[],
-      searchText: ''
+      searchText: '',
+      categoryPage: 1,
+      perPage: 20,
+      isModalOpen: false
     }
   },
   getters: {
+    // 選択されたアイコンを取得
     findSelectedIcon(state) :Icon {
       return state.selectedIcon
     },
+    findCategoryId(state) :number {
+      return state.category_id
+    },
+    findIsModalOpen(state) :boolean {
+      return state.isModalOpen
+    },
+    // カテゴリーごとにフィルターした要素を取得
     filteredIcons(state) :Icon[] {
-      return state.icons.filter(i => i.category_id === state.id)
+      return state.icons.filter(i => i.category_id === state.category_id)
+    },
+    // カテゴリーごとにフィルターした要素から最大perPage分だけ取得
+    filteredIconsPerPage(state) :Icon[] {
+      const icons = this.filteredIcons
+      const iconLen = icons.length
+      const page = state.categoryPage
+      const perPage = state.perPage
+      let res = []
+      if(iconLen <= perPage) {
+        res =  icons
+      } else {
+        res =  icons.slice((page-1)*perPage, page*perPage)
+      }
+      return res
+    },
+    pageNum(state) :number {
+      const len = this.filteredIcons.length
+      const perPage = state.perPage
+      return Math.ceil(len / perPage)
+    },
+    pageNumArr() :number[] {
+      return [...Array(this.pageNum)].map((_, i) => i+1);
     }
   },
   actions: {
     addCategoryId(id :number) :void {
-      this.id = id
+      this.category_id = id
     },
-    addIconData(data :Icon[]) {
+    addIconData(data :Icon[]) :void {
       this.icons = data
     },
-    addSelectedIcon(icon :Icon) {
+    addSelectedIcon(icon :Icon) :void {
       this.selectedIcon = icon
+    },
+    addCategoryPage(page :number) :void {
+      this.categoryPage = page
+    },
+    toggleModal() :void  {
+      this.isModalOpen = !this.isModalOpen
     }
-    // addPokemon(pokemon: Pokemon) :void {
-    //   this.pokemon = pokemon
-    // },
-    // addPokemons(pokemons: Pokemon[]) :void {
-    //   this.pokemons = pokemons
-    // },
   }
 });

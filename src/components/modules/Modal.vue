@@ -8,7 +8,7 @@
                     <div class="sm:flex sm:items-start">
                         <div class="mt-3 sm:mt-0 sm:ml-4 sm:text-left">
                             <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-                                <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" :src="`/src/assets/thumbnails/${adjustedPokeId(store.selectedId)}.png`">
+                                <!-- <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" :src="`/src/assets/thumbnails/${adjustedPokeId(store.selectedId)}.png`"> -->
                                 <div class="lg:w-2/3 w-full">
                                     <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-gray-50">Microdosing synth tattooed vexillologist</h1>
                                     <p class="mb-8 leading-relaxed">Meggings kinfolk echo park stumptown DIY, kale chips beard jianbing tousled. Chambray dreamcatcher trust fund, kitsch vice godard disrupt ramps hexagon mustache umami snackwave tilde chillwave ugh. Pour-over meditation PBR&amp;B pickled ennui celiac mlkshk freegan photo booth af fingerstache pitchfork.</p>
@@ -29,11 +29,7 @@
                                         </ul>
                                     </div>
                                     <div>
-                                        <Chart />
                                     </div>
-                                    <div>い</div>
-                                    <div>う</div>
-                                    <div>え</div>
                                 </div>
                             </div>
                         </div>
@@ -46,19 +42,12 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, reactive, ref, computed } from "vue";
-import { usePokemonStore } from "../../store/icon";
-import Chart from "./Chart.vue"
-const store = usePokemonStore()
+import { useIconStore } from "../../store/icon";
+const store = useIconStore()
 
+// モーダルの開閉を制御
 const toggleModal = () => {
     store.toggleModal()
 }
-
-const pokemon = store.pokemon
-
-const adjustedPokeId = ((id :number) :string => {
-    return String(id).padStart(3, '0')
-})
 
 </script>
