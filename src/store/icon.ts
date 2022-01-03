@@ -56,14 +56,16 @@ export const useIconStore = defineStore("icon", {
       }
       return res
     },
+    // アイコン数からぺジネーションに必要なページ数を取得
     pageNum(state) :number {
       const len = this.filteredIcons.length
       const perPage = state.perPage
       return Math.ceil(len / perPage)
     },
+    // gettersのpageNumをArrayにして返す
     pageNumArr() :number[] {
       return [...Array(this.pageNum)].map((_, i) => i+1);
-    }
+    },
   },
   actions: {
     addCategoryId(id :number) :void {

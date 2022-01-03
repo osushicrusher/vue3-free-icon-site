@@ -21,8 +21,7 @@
 import { storeToRefs } from "pinia";
 import { useIconStore } from "../../store/icon";
 import { useRoute, useRouter } from 'vue-router'
-import { onMounted, ref } from "vue";
-import categoryData from "../../assets/data/categories/category.json"
+import categoryData from "../../assets/data/categories/icons.json"
 import Pagination from "../modules/Pagination.vue"
 
 const store = useIconStore()
