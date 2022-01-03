@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": {
+            "ja": "ベーシック",
+            "en": "basic"
+        },
+        "description": "ベーシックカテゴリーです"
+    },
+    {
+        "id": 2,
+        "name": {
+            "ja": "動物",
+            "en": "animals"
+        },
+        "description": "動物カテゴリーです"
+    },
+    {
+        "id": 3,
+        "name": {
+            "ja": "文字",
+            "en": "character"
+        },
+        "description": "文字カテゴリーです"
+    }
+]
