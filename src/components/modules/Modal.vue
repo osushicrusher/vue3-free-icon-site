@@ -13,20 +13,13 @@
                                     <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-gray-50">Microdosing synth tattooed vexillologist</h1>
                                     <p class="mb-8 leading-relaxed">Meggings kinfolk echo park stumptown DIY, kale chips beard jianbing tousled. Chambray dreamcatcher trust fund, kitsch vice godard disrupt ramps hexagon mustache umami snackwave tilde chillwave ugh. Pour-over meditation PBR&amp;B pickled ennui celiac mlkshk freegan photo booth af fingerstache pitchfork.</p>
                                     <div class="flex justify-start">
-                                        <ul class="flex border-b">
-                                            <li class="-mb-px mr-1">
-                                                <a class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold" href="#">Active</a>
-                                            </li>
-                                            <li class="mr-1">
-                                                <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" href="#">Tab</a>
-                                            </li>
-                                            <li class="mr-1">
-                                                <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" href="#">Tab</a>
-                                            </li>
-                                            <li class="mr-1">
-                                                <a class="bg-white inline-block py-2 px-4 text-gray-400 font-semibold" href="#">Tab</a>
-                                            </li>
-                                        </ul>
+                                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                        Button-1
+                                        </button>
+                                        <hr class="my-2" />
+                                        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                                        Button-2
+                                        </button>
                                     </div>
                                     <div>
                                     </div>
