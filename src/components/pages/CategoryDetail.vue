@@ -21,26 +21,36 @@
                         </a>
                     </div>
                 </div>
-                <button @click="toggleModal()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                <div class="lg:w-2/3">
+                    <ul class="flex justify-start mb-3">
+                        <li class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">サイズ</li>
+                        <li v-for="(s, i) in sizes" :key="i" @click="setSize(s)" class="bg-blue-500 hover:bg-blue-700 border-l-2 border-l-blue-700 text-white font-bold py-2 px-4">{{ s }}</li>
+                    </ul>
+                    <ul class="flex justify-start mb-3">
+                        <li class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4">ファイル</li>
+                        <li v-for="(f, i) in fileTypes" :key="i" @click="setFileType(f)" class="bg-green-500 hover:bg-green-700 border-l-2 border-l-green-700 text-white font-bold py-2 px-4">{{ f }}</li>
+                    </ul>
+                </div>
+                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                     ダウンロードする
                 </button>
             </div>
-            <Modal :class="{'hidden': !findIsModalOpen}"/>
         </div>
     </section>
 
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue"
 import { storeToRefs } from "pinia";
 import { useIconStore } from "../../store/icon";
 import { useRoute, useRouter } from 'vue-router'
 import categoryData from "../../assets/data/categories/icons.json"
-import Modal from "../modules/Modal.vue"
+// import Modal from "../modules/Modal.vue"
 const store = useIconStore()
 const router = useRouter()
 const route = useRoute()
-const { findSelectedIcon, findIsModalOpen } = storeToRefs(store)
+const { findSelectedIcon } = storeToRefs(store)
 
 const id = Array(route.params.id)[0]
 if(typeof id !== 'object') {
@@ -48,8 +58,23 @@ if(typeof id !== 'object') {
     store.addSelectedIcon(selectedIcon)
 }
 
-// モーダルの開閉を制御
-const toggleModal = () => {
-    store.toggleModal()
+
+// ダウンロードアイコンのサイズ・ファイル選択に
+type sizeType  = '16x16' | '32x32' | '64x64' | '128x128' | '256x256'
+type fileType = 'SVG' | 'JPEG' | 'PNG' | 'EPS'
+const sizes :sizeType[] = ['16x16', '32x32', '64x64', '128x128', '256x256']
+const fileTypes :fileType[] = ['SVG', 'JPEG', 'PNG', 'EPS']
+
+let sizeRef = ref('')
+let fileTypeRef = ref('')
+
+// ダウンロードするアイコンのサイズをセットする関数
+const setSize = (size :sizeType) => {
+    sizeRef.value = size
+}
+
+// ダウンロードするアイコンのファイルタイプをセットする関数
+const setFileType = (type :fileType) => {
+    fileTypeRef.value = type
 }
 </script>

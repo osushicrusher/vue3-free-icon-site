@@ -28,7 +28,9 @@
             </div>
             <ul class="container grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2 mx-auto mb-10">
                 <li v-for="i in getIcons(2, 6)" :key="i.id" class="w-full rounded">
-                    <img :src="`${i.path}.svg`" alt="image">
+                    <a :href="`/category/${i.category_id}/${i.id}`">
+                        <img :src="`${i.path}.svg`" alt="image">
+                    </a>
                 </li>
             </ul>
             <div class="flex items-center mb-3">
@@ -49,27 +51,22 @@
 </template>
 
 <script setup lang="ts">
-import { storeToRefs } from "pinia";
-import { useIconStore } from "../../store/icon";
 import categories from "../../assets/data/categories/categories.json"
 import iconData from "../../assets/data/categories/icons.json"
-import { onMounted } from "vue";
-// const store = useIconStore()
-// const { findSelectedIcon } = storeToRefs(store)
 
 type IconName = {
-  ja: string
-  en: string
+    ja: string
+    en: string
 }
 
 type Icon = {
-  id: number
-  name: IconName
-  category_id: number
-  tags: string[],
-  description: string,
-  path: string
-  settingCount: number
+    id: number
+    name: IconName
+    category_id: number
+    tags: string[],
+    description: string,
+    path: string
+    settingCount: number
 }
 
 // 1:ベーシック, 2:動物, 3:文字
@@ -88,6 +85,8 @@ const getIcons = (categoryId :number, num :number) :Icon[] => {
     })
     return res
 }
+console.log(getIcons(2, 6))
+
 
 
 </script>

@@ -49,9 +49,5 @@ let isNavOpen = ref<boolean>(false)
 const toggleNav = () :void => {
     isNavOpen.value = !isNavOpen.value
 }
-
-console.log(isNavOpen.value)
-
-
 </script>
 
