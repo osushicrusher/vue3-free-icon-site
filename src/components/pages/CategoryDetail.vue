@@ -46,7 +46,6 @@ import { storeToRefs } from "pinia";
 import { useIconStore } from "../../store/icon";
 import { useRoute, useRouter } from 'vue-router'
 import categoryData from "../../assets/data/categories/icons.json"
-// import Modal from "../modules/Modal.vue"
 const store = useIconStore()
 const router = useRouter()
 const route = useRoute()
