@@ -7,7 +7,6 @@
             </svg>
             <router-link to="/" class="ml-3 text-xl dark:text-white mr-auto">Practicons.</router-link>
             </a>
-            <!-- ml-4  -->
             <div :class="{'hidden sm:block': !isNavOpen}" class="md:mr-auto">
                 <nav :class="[isNavOpen ? 'w-9/12 z-50 bg-indigo-200 dark:bg-indigo-900 h-screen absolute inset-0 flex-col ' : '']" class="ml-4 mr-auto py-1 pl-4 md:border-gray-400 flex flex-wrap items-center text-base justify-center">
                     <router-link to="/category/2" @click="addCategoryId(2)" class="mr-5 hover:text-gray-900 dark:text-white">カテゴリーで選ぶ</router-link>
@@ -45,7 +44,7 @@ const addCategoryId = (id :number) => {
     store.addCategoryId(id)
 }
 
-let isNavOpen = ref<boolean>(false)
+let isNavOpen = ref(false)
 const toggleNav = () :void => {
     isNavOpen.value = !isNavOpen.value
 }
