@@ -1,5 +1,5 @@
 <template>
-    <section class="text-gray-700">
+    <section id="faq" class="text-gray-700">
         <div class="text-center mb-20">
             <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">FAQ</h2>
             <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4 dark:text-white">よくある質問</h1>
@@ -8,34 +8,19 @@
             <div class="px-4 py-2">
                 <details class="mb-4">
                     <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
-                    How Long is this site live?
+                    無料でダウンロード・私的に使用しても問題はありませんか？
                     </summary>
-                    <span>
-                    Laboris qui labore cillum culpa in sunt quis sint veniam.
-                    Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
-                    minim velit nostrud pariatur culpa magna in aute.
+                    <span class="dark:text-white">
+                        <span class="inline-block">こちらでダウンロード可能なアイコンは、個人利用・商用利用に関係なく、全て無料でご利用いただけますが、</span>
+                        <span class="inline-block">オリジナルの作品を偽った再配布・販売はお控えください。</span>
                     </span>
                 </details>
                 <details class="mb-4">
                     <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">
-                    Can I install/upload anything I want on there?
+                    著作権を表記する必要がありますか？
                     </summary>
-
-                    <span>
-                    Laboris qui labore cillum culpa in sunt quis sint veniam.
-                    Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
-                    minim velit nostrud pariatur culpa magna in aute.
-                    </span>
-                </details>
-                <details class="mb-4">
-                    <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
-                    How can I migrate to another site?
-                    </summary>
-
-                    <span>
-                    Laboris qui labore cillum culpa in sunt quis sint veniam.
-                    Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
-                    minim velit nostrud pariatur culpa magna in aute.
+                    <span class="dark:text-white">
+                        必要ありません。
                     </span>
                 </details>
             </div>
