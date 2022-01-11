@@ -85,8 +85,5 @@ const getIcons = (categoryId :number, num :number) :Icon[] => {
     })
     return res
 }
-console.log(getIcons(2, 6))
-
-
 
 </script>

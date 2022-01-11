@@ -8,9 +8,6 @@
             <a href="https://github.com/osushicrusher" rel="noopener noreferrer" target="_blank" class="mr-3">
                 <img src="/src/assets/icons/GitHub/PNG/GitHub-Mark-32px.png" alt="Githubのアイコン">
             </a>
-            <a href="https://uncovered-emperor-9a2.notion.site/Hikaru-Yoshino-6f6a519ca009441aa8c817820cea2867" rel="noopener noreferrer" target="_blank">
-                <img src="/src/assets/icons/Notion/notion-logo.png" width="32px" alt="Notionのアイコン">
-            </a>
         </span>
         </div>
     </footer>

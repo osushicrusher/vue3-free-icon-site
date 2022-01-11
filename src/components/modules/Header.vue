@@ -8,9 +8,9 @@
             <a href="/" class="ml-3 text-xl dark:text-white mr-auto">Practicons.</a>
             </a>
             <div :class="{'hidden sm:block': !isNavOpen}" class="md:mr-auto">
-                <nav :class="[isNavOpen ? 'w-9/12 z-50 bg-indigo-200 dark:bg-indigo-900 h-screen absolute inset-0 flex-col ' : '']" class="ml-4 mr-auto py-1 pl-4 md:border-gray-400 flex flex-wrap items-center text-base justify-center">
-                    <a href="/#category" @click="addCategoryId(2)" class="mr-5 hover:text-gray-900 dark:text-white">カテゴリーで選ぶ</a>
-                    <a href="/#faq" class="mr-5 hover:text-gray-900 dark:text-white">よくある質問</a>
+                <nav :class="[isNavOpen ? 'w-9/12 z-50 bg-indigo-200 dark:bg-indigo-900 h-screen absolute inset-0 flex-col ' : '']" class="mr-auto py-1 pl-4 md:border-gray-400 flex flex-wrap items-center text-base justify-center">
+                    <a href="/#category" @click="closeNav()" class="mr-5 hover:text-gray-900 dark:text-white">カテゴリーで選ぶ</a>
+                    <a href="/#faq" @click="closeNav()" class="mr-5 hover:text-gray-900 dark:text-white">よくある質問</a>
                 </nav>
             </div>
             <button @click="theme()" class="w-12 h-6 rounded-full p-1 bg-gray-400 dark:bg-gray-600 relative transition-colors duration-500 ease-infocus:outline-none focus:ring-2 focus:ring-blue-700 dark:focus:ring-blue-600 focus:border-transparent">
@@ -47,6 +47,12 @@ const addCategoryId = (id :number) => {
 let isNavOpen = ref(false)
 const toggleNav = () :void => {
     isNavOpen.value = !isNavOpen.value
+}
+
+const closeNav = () :void => {
+    if(isNavOpen.value) {
+        isNavOpen.value = false
+    }
 }
 </script>
 
