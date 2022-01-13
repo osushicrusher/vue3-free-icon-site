@@ -31,9 +31,9 @@
                         <li v-for="(f, i) in fileTypes" :key="i" @click="setFileType(f)" :class="{'bg-green-700': f === fileTypeRef}" class="flex justify-center items-center bg-green-500 hover:bg-green-700 border-l-2 border-l-green-700 text-white font-bold py-2 px-4">{{ f }}</li>
                     </ul>
                 </div>
-                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                <a :href="`/src/assets/icons/${fileTypeRef.toLowerCase()}/${findSelectedIcon.name.en}_${sizeRef}.${fileTypeRef.toLowerCase()}`" :download="`${findSelectedIcon.name.en}_${sizeRef}.${fileTypeRef.toLowerCase()}`" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded text-center">
                     ダウンロードする
-                </button>
+                </a>
             </div>
         </div>
     </section>
@@ -56,7 +56,6 @@ if(typeof id !== 'object') {
     const selectedIcon = categoryData[parseInt(id)-1]
     store.addSelectedIcon(selectedIcon)
 }
-
 
 // ダウンロードアイコンのサイズ・ファイル選択に
 type sizeType  = '16x16' | '32x32' | '64x64' | '128x128' | '256x256'
