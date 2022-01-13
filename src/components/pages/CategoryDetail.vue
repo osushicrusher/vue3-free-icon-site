@@ -24,11 +24,11 @@
                 <div class="lg:w-2/3">
                     <ul class="flex justify-start mb-3">
                         <li class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">サイズ</li>
-                        <li v-for="(s, i) in sizes" :key="i" @click="setSize(s)" class="flex justify-center items-center bg-blue-500 hover:bg-blue-700 border-l-2 border-l-blue-700 text-white font-bold py-2 px-4">{{ s }}</li>
+                        <li v-for="(s, i) in sizes" :key="i" @click="setSize(s)" :class="{'bg-blue-700': s === sizeRef}" class="flex justify-center items-center bg-blue-500 hover:bg-blue-700 border-l-2 border-l-blue-700 text-white font-bold py-2 px-4">{{ s }}</li>
                     </ul>
                     <ul class="flex justify-start mb-3">
                         <li class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4">ファイル</li>
-                        <li v-for="(f, i) in fileTypes" :key="i" @click="setFileType(f)" class="flex justify-center items-center bg-green-500 hover:bg-green-700 border-l-2 border-l-green-700 text-white font-bold py-2 px-4">{{ f }}</li>
+                        <li v-for="(f, i) in fileTypes" :key="i" @click="setFileType(f)" :class="{'bg-green-700': f === fileTypeRef}" class="flex justify-center items-center bg-green-500 hover:bg-green-700 border-l-2 border-l-green-700 text-white font-bold py-2 px-4">{{ f }}</li>
                     </ul>
                 </div>
                 <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
