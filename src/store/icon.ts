@@ -9,7 +9,7 @@ type Icon = {
   id: number
   name: IconName
   category_id: number
-  tags: string[],
+  tags: string,
   description: string,
   path: string
   settingCount: number

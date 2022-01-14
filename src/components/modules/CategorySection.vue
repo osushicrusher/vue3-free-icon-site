@@ -51,7 +51,6 @@
 </template>
 
 <script setup lang="ts">
-import categories from "../../assets/data/categories/categories.json"
 import iconData from "../../assets/data/categories/icons.json"
 
 type IconName = {

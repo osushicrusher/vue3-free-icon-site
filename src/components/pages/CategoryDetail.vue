@@ -47,7 +47,6 @@ import { useIconStore } from "../../store/icon";
 import { useRoute, useRouter } from 'vue-router'
 import categoryData from "../../assets/data/categories/icons.json"
 const store = useIconStore()
-const router = useRouter()
 const route = useRoute()
 const { findSelectedIcon } = storeToRefs(store)
 

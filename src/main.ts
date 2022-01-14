@@ -8,9 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faPlay, faSearch, faTimesCircle, faMusic, faChevronDown)
 
-// import VueRouter from 'vue-router'
-// import Vue from 'vue'
-// // Vue.use(VueRouter)
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeComponent from "./components/pages/Home.vue"
 import CategoriesComponent from "./components/pages/Categories.vue"

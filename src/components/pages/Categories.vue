@@ -22,7 +22,6 @@ import { storeToRefs } from "pinia";
 import { useIconStore } from "../../store/icon";
 import { useRoute, useRouter } from 'vue-router'
 import categoryData from "../../assets/data/categories/icons.json"
-import Pagination from "../modules/Pagination.vue"
 
 const store = useIconStore()
 const router = useRouter()
@@ -38,7 +37,7 @@ type Icon = {
     id: number
     name: IconName
     category_id: number
-    tags: string[],
+    tags: string
     description: string
     path: string
     settingCount: number
@@ -50,7 +49,7 @@ const paramCategoryId = route.params.category_id
 if(paramCategoryId && typeof paramCategoryId === 'string' && pageQuery === '0') {
     const id = Array(paramCategoryId)[0]
     if(typeof id !== 'object') {
-        const iconData :Icon[] = categoryData
+        const iconData = categoryData
         store.addCategoryId(parseInt(id))
         store.addIconData(iconData)
     }

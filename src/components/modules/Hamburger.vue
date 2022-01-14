@@ -9,9 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { useIconStore } from "../../store/icon";
-
-const toggleHamburger = (e) :void => {
+const toggleHamburger = (e :any) :void => {
     const target = e.currentTarget
     if(target.getAttribute('aria-expanded') == 'false') {
         target.setAttribute('aria-expanded', true)

@@ -40,10 +40,6 @@ const theme = () :void => {
     }
 }
 
-const addCategoryId = (id :number) => {
-    store.addCategoryId(id)
-}
-
 let isNavOpen = ref(false)
 const toggleNav = () :void => {
     isNavOpen.value = !isNavOpen.value
