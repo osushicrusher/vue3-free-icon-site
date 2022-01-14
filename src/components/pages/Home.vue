@@ -7,6 +7,7 @@
 
 <script setup lang="ts">
 import { useIconStore } from "../../store/icon";
+import CategorySection from "../modules/CategorySection.vue"
 import Faq from "../modules/Faq.vue"
 
 const store = useIconStore()
