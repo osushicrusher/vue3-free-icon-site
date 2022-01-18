@@ -13,7 +13,7 @@
                 </li>
             </ul>
         </div>
-        <Pagination class="text-center" />
+        <Pagination v-if="filteredIconsPerPage != ''" class="text-center" />
     </div>
 </template>
 
