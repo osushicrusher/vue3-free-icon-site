@@ -5,7 +5,9 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -29,10 +31,15 @@
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.8",
+    "@storybook/addon-actions": "^6.4.13",
+    "@storybook/addon-essentials": "^6.4.13",
+    "@storybook/addon-links": "^6.4.13",
+    "@storybook/vue3": "^6.4.13",
     "@testing-library/vue": "^6.4.2",
     "@types/jest": "^27.4.0",
     "@vitejs/plugin-vue": "^2.0.0",
     "autoprefixer": "^10.4.0",
+    "babel-loader": "^8.2.3",
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-webp-webpack-plugin": "^3.3.6",
     "imagemin-webpack-plugin": "^2.4.2",
@@ -44,6 +51,7 @@
     "vite": "^2.7.2",
     "vite-plugin-vue-webp": "0.0.7",
     "vue-jest": "^5.0.0-alpha.10",
+    "vue-loader": "^16.8.3",
     "vue-tsc": "^0.29.8"
   }
 }
