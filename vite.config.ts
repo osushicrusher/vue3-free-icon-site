@@ -6,11 +6,5 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [
     vue(),
-    // ViteWebp({
-    //   dirs: ['src/assets/icons'],
-    //   extensions: ['jpg', 'jpeg', 'png', 'svg'],
-    //   customResolvers: [],
-    //   customSearchRegex: '([A-Z][a-zA-Z0-9]+)',
-    // })
   ]
 })

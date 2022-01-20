@@ -67,9 +67,10 @@ type Icon = {
     path: string
     settingCount: number
 }
+type typeCategoryIds = 1 | 2 | 3
 
 // 1:ベーシック, 2:動物, 3:文字
-const categoryIds = [1, 2, 3]
+const categoryIds :typeCategoryIds[] = [1, 2, 3]
 
 // 各カテゴリーのIDに一致するアイコンデータをnum個分取得
 const getIcons = (categoryId :number, num :number) :Icon[] => {

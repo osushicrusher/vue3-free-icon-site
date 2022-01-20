@@ -1,4 +1,4 @@
-import MyHeader from './Header.vue';
+import MyHeader from '../components/modules/Header.vue';
 
 export default {
   title: 'Example/Header',
@@ -14,7 +14,7 @@ const Template = (args) => ({
     return { ...args };
   },
   // Then, the spread values can be accessed directly in the template
-  template: '<my-header :user="user" />',
+  template: '<my-header />',
 });
 
 export const LoggedIn = Template.bind({});
