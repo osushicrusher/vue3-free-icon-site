@@ -52,22 +52,7 @@
 
 <script setup lang="ts">
 import iconData from "../../assets/data/categories/icons.json"
-
-type IconName = {
-    ja: string
-    en: string
-}
-
-type Icon = {
-    id: number
-    name: IconName
-    category_id: number
-    tags: string,
-    description: string,
-    path: string
-    settingCount: number
-}
-type typeCategoryIds = 1 | 2 | 3
+import { Icon, typeCategoryIds } from '../../logics/iconType'
 
 // 1:ベーシック, 2:動物, 3:文字
 const categoryIds :typeCategoryIds[] = [1, 2, 3]

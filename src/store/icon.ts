@@ -1,20 +1,5 @@
 import { defineStore } from "pinia";
 
-type IconName = {
-  ja: string
-  en: string
-}
-
-type Icon = {
-  id: number
-  name: IconName
-  category_id: number
-  tags: string,
-  description: string,
-  path: string
-  settingCount: number
-}
-
 export const useIconStore = defineStore("icon", {
   state: () => {
     return {

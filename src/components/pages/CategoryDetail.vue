@@ -46,6 +46,7 @@ import { storeToRefs } from "pinia";
 import { useIconStore } from "../../store/icon";
 import { useRoute, useRouter } from 'vue-router'
 import categoryData from "../../assets/data/categories/icons.json"
+import { sizeType, fileType } from '../../logics/iconType'
 const store = useIconStore()
 const route = useRoute()
 const { findSelectedIcon } = storeToRefs(store)
@@ -57,8 +58,6 @@ if(typeof id !== 'object') {
 }
 
 // ダウンロードアイコンのサイズ・ファイル選択に
-type sizeType  = '16x16' | '32x32' | '64x64' | '128x128' | '256x256'
-type fileType = 'SVG' | 'JPEG' | 'PNG' | 'EPS'
 const sizes :sizeType[] = ['16x16', '32x32', '64x64', '128x128', '256x256']
 const fileTypes :fileType[] = ['SVG', 'JPEG', 'PNG', 'EPS']
 

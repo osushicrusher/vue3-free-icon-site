@@ -23,26 +23,13 @@ import { useIconStore } from "../../store/icon";
 import { useRoute, useRouter } from 'vue-router'
 import categoryData from "../../assets/data/categories/icons.json"
 import Pagination from "../../components/modules/Pagination.vue"
+import { Icon } from '../../logics/iconType'
 
 const store = useIconStore()
 const router = useRouter()
 const route = useRoute()
 
 const { filteredIcons, filteredIconsPerPage } = storeToRefs(store)
-
-type IconName = {
-    ja: string
-    en: string
-}
-type Icon = {
-    id: number
-    name: IconName
-    category_id: number
-    tags: string
-    description: string
-    path: string
-    settingCount: number
-}
 
 const pageQuery = route.query.page
 const paramCategoryId = route.params.category_id
