@@ -44,7 +44,7 @@
 import { ref } from "vue"
 import { storeToRefs } from "pinia";
 import { useIconStore } from "../../store/icon";
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import categoryData from "../../assets/data/categories/icons.json"
 import { sizeType, fileType } from '../../logics/iconType'
 const store = useIconStore()

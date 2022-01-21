@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { Icon } from "../logics/iconType"
 
 export const useIconStore = defineStore("icon", {
   state: () => {
