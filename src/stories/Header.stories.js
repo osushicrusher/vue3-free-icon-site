@@ -1,4 +1,10 @@
 import MyHeader from '../components/modules/Header.vue';
+import { createApp } from 'vue'
+import App from '../App.vue'
+import { createPinia } from "pinia"
+const pinia = createPinia()
+createApp(App).use(pinia)
+
 
 export default {
   title: 'Example/Header',

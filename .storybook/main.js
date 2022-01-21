@@ -13,13 +13,31 @@
 const path = require('path')
 
 module.exports = {
-  stories: ['../src/stories/*.stories.js'],
+  stories: ['../src/**/*.stories.js'],
   webpackFinal: config => {
     config.module.rules.push({
-      test: /\.mjs$/,
+      test: /\.mjs$|\.css$/,
       include: /node_modules/,
       type: 'javascript/auto',
+      // use: [
+      //   {
+      //     loader: 'postcss-loader',
+      //     options: {
+      //       sourceMap: true,
+      //       postcssOptions: {
+      //         plugins: [
+      //           require('tailwindcss'),
+      //           require('autoprefixer'),
+      //         ]
+      //       }
+      //     },
+      //   },
+      // ]
     })
+    config.resolve.alias = {
+      "~": path.resolve(__dirname, "/src"),
+      "vue": "vue/dist/vue.esm-bundler.js"
+    }
     return config
   }
 }

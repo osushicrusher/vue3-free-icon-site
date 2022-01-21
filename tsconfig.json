@@ -13,5 +13,9 @@
     // "allowSyntheticDefaultImports": true
     "types": ["webpack-env", "jest"]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/stories/Chart.stories.js"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/stories/Chart.stories.js"],
+  "baseUrl": ".",
+  "paths": {
+    "~/*": ["src/*"]
+  }
 }
