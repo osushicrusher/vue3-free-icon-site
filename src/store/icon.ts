@@ -55,6 +55,7 @@ export const useIconStore = defineStore("icon", {
   },
   actions: {
     addCategoryId(id :number) :void {
+      if(id <= 0) return
       this.category_id = id
     },
     addIconData(data :Icon[]) :void {

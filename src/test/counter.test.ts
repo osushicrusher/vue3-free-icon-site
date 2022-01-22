@@ -2,16 +2,16 @@ import { render, fireEvent } from "@testing-library/vue";
 import Counter from "../components/Counter.vue";
 
 test("increments value on click", async () => {
-  // The render method returns a collection of utilities to query your component.
+  // renderメソッドは、コンポーネントに問い合わせるためのユーティリティのコレクションを返します。
   const { getByText } = render(Counter);
 
-  // getByText returns the first matching node for the provided text, and
-  // throws an error if no elements match or if more than one match is found.
+  // getByTextは、与えられたテキストに最初にマッチするノードを返します。
+  // 一致する要素がない場合、あるいは一致する要素が複数ある場合にエラーを投げます。
   getByText("Times clicked: 0");
 
   const button = getByText("increment");
 
-  // Dispatch a native click event to our button element.
+  // ボタン要素にネイティブのクリックイベントをディスパッチします。
   await fireEvent.click(button);
   await fireEvent.click(button);
 
