@@ -65,6 +65,7 @@ export const useIconStore = defineStore("icon", {
       this.selectedIcon = icon
     },
     addCategoryPage(page :number) :void {
+      if(page <= 0) return
       this.categoryPage = page
     },
     toggleModal() :void  {
