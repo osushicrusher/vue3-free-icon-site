@@ -31,7 +31,7 @@
                         <li v-for="(f, i) in fileTypes" :key="i" @click="setFileType(f)" :class="{'bg-green-700': f === fileTypeRef}" class="flex justify-center items-center bg-green-500 hover:bg-green-700 border-l-2 border-l-green-700 text-white font-bold py-2 px-4">{{ f }}</li>
                     </ul>
                 </div>
-                <a :href="`/src/assets/icons/${fileTypeRef.toLowerCase()}/${findSelectedIcon.name.en}_${sizeRef}.${fileTypeRef.toLowerCase()}`" :download="`${findSelectedIcon.name.en}_${sizeRef}.${fileTypeRef.toLowerCase()}`" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded text-center">
+                <a :href="`/src/assets/icons/${fileTypeRef.toLowerCase()}/${findSelectedIcon.name.en}_${sizeRef}.${fileTypeRef.toLowerCase()}`" :download="`${findSelectedIcon.name.en}_${sizeRef}.${fileTypeRef.toLowerCase()}`" :class="{'pointer-events-none bg-gray-500': !isSelected, 'bg-green-500': isSelected}" class="text-white font-bold py-2 px-4 rounded text-center">
                     ダウンロードする
                 </a>
             </div>
@@ -41,7 +41,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue"
+import { ref, computed } from "vue"
 import { storeToRefs } from "pinia";
 import { useIconStore } from "../../store/icon";
 import { useRoute } from 'vue-router'
@@ -61,16 +61,31 @@ if(typeof id !== 'object') {
 const sizes :sizeType[] = ['16x16', '32x32', '64x64', '128x128', '256x256']
 const fileTypes :fileType[] = ['SVG', 'JPEG', 'PNG', 'EPS']
 
-let sizeRef = ref('')
-let fileTypeRef = ref('')
+let sizeRef = ref<sizeType>('')
+let fileTypeRef = ref<fileType>('')
+
+const isSelected = computed(() => {
+    return sizeRef.value !== '' && fileTypeRef.value !== ''
+})
 
 // ダウンロードするアイコンのサイズをセットする関数
 const setSize = (size :sizeType) => {
+    if(size === sizeRef.value) {
+        sizeRef.value = ''
+        return
+    }
     sizeRef.value = size
 }
 
 // ダウンロードするアイコンのファイルタイプをセットする関数
 const setFileType = (type :fileType) => {
+    if(type === fileTypeRef.value) {
+        fileTypeRef.value = ''
+        return
+    }
     fileTypeRef.value = type
 }
+
+
+
 </script>
