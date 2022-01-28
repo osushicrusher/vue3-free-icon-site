@@ -1,19 +1,15 @@
 <template>
     <section class="text-gray-600 body-font">
         <div class="flex flex-col mb-10 items-start">
-            <div class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                </svg>
-            </div>
             <div class="flex-grow">
-                <h1 class="text-gray-900 text-lg title-font font-medium mb-3">{{ findSelectedIcon.name.ja }}</h1>
-                <p class="leading-relaxed text-base">{{ findSelectedIcon.description }}</p>
-                <a class="mt-3 text-indigo-500 inline-flex items-center">カテゴリ:動物
+                <!-- <a class="mt-3 text-indigo-500 inline-flex items-center">
+                    カテゴリ:動物
                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                         <path d="M5 12h14M12 5l7 7-7 7"></path>
                     </svg>
-                </a>
+                </a> -->
+                <h1 class="text-gray-900 text-lg title-font font-medium mb-3">{{ findSelectedIcon.name.ja }}のアイコン</h1>
+                <p class="leading-relaxed text-base">{{ findSelectedIcon.description }}</p>
             </div>
         </div>
         <div class="flex flex-wrap">
@@ -31,7 +27,7 @@
                         <li v-for="(f, i) in fileTypes" :key="i" @click="setFileType(f)" :class="{'bg-green-700': f === fileTypeRef}" class="flex justify-center items-center bg-green-500 hover:bg-green-700 border-l-2 border-l-green-700 text-white font-bold py-2 px-4">{{ f }}</li>
                     </ul>
                 </div>
-                <a :href="`/src/assets/icons/${fileTypeRef.toLowerCase()}/${findSelectedIcon.name.en}_${sizeRef}.${fileTypeRef.toLowerCase()}`" :download="`${findSelectedIcon.name.en}_${sizeRef}.${fileTypeRef.toLowerCase()}`" :class="{'pointer-events-none bg-gray-500': !isSelected, 'bg-green-500': isSelected}" class="text-white font-bold py-8 px-4 rounded text-center">
+                <a :href="`/src/assets/icons/${fileTypeRef.toLowerCase()}/${findSelectedIcon.name.en}_${sizeRef}.${fileTypeRef.toLowerCase()}`" :download="`${findSelectedIcon.name.en}_${sizeRef}.${fileTypeRef.toLowerCase()}`" :class="{'pointer-events-none bg-gray-500': !isSelected, 'bg-green-500': isSelected}" class="text-white font-bold py-6 px-4 rounded text-center">
                     ダウンロードする
                 </a>
             </div>
