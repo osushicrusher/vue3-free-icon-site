@@ -5,9 +5,9 @@
             <!-- <a href="https://twitter.com/oichiiosushi" rel="noopener noreferrer" target="_blank" class="mr-3">
                 <img src="/src/assets/icons/Twitter/twitter.png" width="32px" alt="twitterのアイコン">
             </a> -->
-            <a href="https://github.com/osushicrusher" rel="noopener noreferrer" target="_blank" class="mr-3">
+            <!-- <a href="https://github.com/osushicrusher" rel="noopener noreferrer" target="_blank" class="mr-3">
                 <img src="/src/assets/icons/GitHub/PNG/GitHub-Mark-32px.png" width="32px" alt="Githubのアイコン">
-            </a>
+            </a> -->
         </span>
         </div>
     </footer>
