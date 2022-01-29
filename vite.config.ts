@@ -20,6 +20,7 @@ export default defineConfig({
       // external: ['vue', 'vue-demi'],
     },
   },
+  base: './'
   // resolve: {
   //   alias: [{ find: 'assets', replacement: 'src/assets'}]
   // }
