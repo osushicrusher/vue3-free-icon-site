@@ -17,10 +17,10 @@ export default defineConfig({
             return id.toString().split('node_modules/')[1].split('/')[0].toString()
         },
       },
-      external: ['vue', 'vue-demi',],
+      // external: ['vue', 'vue-demi'],
     },
   },
-  resolve: {
-    alias: [{ find: 'assets', replacement: 'src/assets'}]
-  }
+  // resolve: {
+  //   alias: [{ find: 'assets', replacement: 'src/assets'}]
+  // }
 })
