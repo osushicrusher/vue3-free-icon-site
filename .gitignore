@@ -5,3 +5,4 @@ dist-ssr
 *.local
 src/assets/bgm
 src/assets/icons
+src/assets/data
