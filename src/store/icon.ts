@@ -29,7 +29,7 @@ export const useIconStore = defineStore("icon", {
       return state.icons.filter(i => i.category_id === state.category_id)
     },
     // カテゴリーごとにフィルターした要素から最大perPage分だけ取得
-    filteredIconsPerPage(state) :Icon[] {
+    filteredIconsPerPage(state) :Icon[] | [] {
       const icons = this.filteredIcons
       const iconLen = icons.length
       const page = state.categoryPage

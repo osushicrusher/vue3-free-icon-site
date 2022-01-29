@@ -1,7 +1,7 @@
 <template>
     <div id="category" class="text-gray-600 body-font">
         <div class="flex flex-col text-center w-full mb-20">
-            <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">CATEGORIES</h2>
+            <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1 dark:text-white">CATEGORIES</h2>
             <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 dark:text-white">カテゴリーで選ぶ</h1>
         </div>
         <div class="flex flex-wrap flex-col">

@@ -1,7 +1,7 @@
 <template>
     <section id="faq" class="text-gray-700">
         <div class="text-center mb-20">
-            <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">FAQ</h2>
+            <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1 dark:text-white">FAQ</h2>
             <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4 dark:text-white">よくある質問</h1>
         </div>
         <div class="lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
