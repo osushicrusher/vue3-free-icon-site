@@ -12,16 +12,17 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        // manualChunks(id) {
-        //   if (id.includes('node_modules'))
-        //     return id.toString().split('node_modules/')[1].split('/')[0].toString()
-        // },
+        manualChunks(id) {
+          if (id.includes('node_modules'))
+            return id.toString().split('node_modules/')[1].split('/')[0].toString()
+        },
       },
-      // external: ['vue', 'vue-demi'],
+      external: ['vue', 'vue-demi'],
     },
+    assetsDir: './assets'
   },
-  base: './'
-  // resolve: {
-  //   alias: [{ find: 'assets', replacement: 'src/assets'}]
-  // }
+  base: './',
+  resolve: {
+    alias: [{ find: 'assets', replacement: 'src/assets'}]
+  }
 })
