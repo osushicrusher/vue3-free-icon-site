@@ -24,7 +24,6 @@ module.exports = {
       "tsConfig": "tsconfig.json"
     }
   },
-  // ソースコードにある @ を src へと割当てる
   "moduleNameMapper": {
     "^@/(.*)$": "<rootDir>/src/$1"
   },
