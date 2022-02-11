@@ -15,5 +15,4 @@ export type Icon = {
 
 export type sizeType  = '16x16' | '32x32' | '64x64' | '128x128' | '256x256' | ''
 export type fileType = 'SVG' | 'JPEG' | 'PNG' | 'EPS' | ''
-
 export type typeCategoryIds = 1 | 2 | 3

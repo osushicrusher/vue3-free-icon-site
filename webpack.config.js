@@ -9,5 +9,11 @@ module.exports = {
       type: 'javascript/auto',
     })
     return config
+  },
+  entry: {
+    
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),  // 出力するフォルダ名
   }
 }

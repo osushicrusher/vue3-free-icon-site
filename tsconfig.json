@@ -12,11 +12,31 @@
     "lib": ["esnext", "dom"],
     // "allowSyntheticDefaultImports": true
     "types": ["webpack-env", "jest"],
-    "skipLibCheck": true
+    // "skipLibCheck": true,
+    // "emitBOM": true,
+    // "charset": "utf8"
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/stories/Chart.stories.js"],
-  "baseUrl": ".",
-  "paths": {
-    "~/*": ["src/*"]
-  }
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["node_modules"],
+  // "baseUrl": ".",
+  // "paths": {
+  //   "~/*": ["src/*"]
+  // }
 }
+
+// {
+//   "compilerOptions": {
+//     "target": "esnext",
+//     "useDefineForClassFields": true,
+//     "module": "esnext",
+//     "moduleResolution": "node",
+//     "strict": true,
+//     "jsx": "preserve",
+//     "sourceMap": true,
+//     "resolveJsonModule": true,
+//     "esModuleInterop": true,
+//     "lib": ["esnext", "dom"]
+//   },
+//   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+// }
+

@@ -9,20 +9,4 @@ export default defineConfig({
     vue(),
     compress(),
   ],
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules'))
-            return id.toString().split('node_modules/')[1].split('/')[0].toString()
-        },
-      },
-      external: ['vue', 'vue-demi'],
-    },
-    assetsDir: './assets'
-  },
-  base: './',
-  resolve: {
-    alias: [{ find: 'assets', replacement: 'src/assets'}]
-  }
 })
